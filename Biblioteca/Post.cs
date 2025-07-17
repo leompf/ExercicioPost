@@ -12,7 +12,8 @@ public class Post
 
     private int _gostos;
 
-    private bool _estado;
+    private int _ngostos;
+
 
     public string Titulo
     {
@@ -37,35 +38,28 @@ public class Post
     public int Gostos
     {
         get { return _gostos; }
-        set
-        {
-            _gostos = value;
-        }
+        set { _gostos = value; }
     }
+
+    public int NaoGostos
+    {
+        get { return _ngostos; }
+        set { _ngostos = value; }
+    }
+
     public DateTime Data
     {
         get { return _data; }
     }
 
-    public bool Estado
+    public Post(string titulo, string descricao)
     {
-        get { return _estado; }
+        _titulo = titulo;
+        _descricao = descricao;
     }
 
     public void DataPost()
     {
         _data = DateTime.Now;
-    }
-
-    public bool CriarPost()
-    {
-        _estado = false;
-
-        if (Titulo != null && Descricao != null)
-        {
-            _estado =  true;
-        }
-
-        return _estado;
     }
 }
